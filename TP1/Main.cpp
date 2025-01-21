@@ -26,22 +26,68 @@ int exo1(){
     }
     return 0;
 }
-int exo2() {}
+//int exo2() {}
 
-int exo3() {}
+int exo3() {
+    double hauteurInitiale;
+    int nombreRebond;
+    double coefficientRebond;
 
-int exo4() {}
+    while (true){
+        cout << "Entrer la hauteur initiale de la balle en mètres: " << endl;
+        cin >> hauteurInitiale;
+        if (hauteurInitiale <= 0) {
+            cout << "La hauteur initiale doit être positive" << endl;
+        } else {
+            break;
+        }
+    }
+    while (true){
+        cout << "Entrer le nombre de rebonds de la balle: " << endl;
+        cin >> nombreRebond;
+        if (nombreRebond <= 0) {
+            cout << "Le nombre de rebonds de la balle doit être un entier positif" << endl;
+        } else {
+            break;
+        }
+    }
+    while (true){
+        cout << "Entrer le coefficient de rebonds de la balle: " << endl;
+        cin >> coefficientRebond;
+        if (coefficientRebond <= 0 || coefficientRebond >= 1) {
+            cout << "Le coefficient de rebonds de la balle doit être compris entre 0 et 1" << endl;
+        } else {
+            break;
+        }
+    }
 
-int exo5() {}
+    double g = 9.81;
+    double vi;
+    double v1;
+    double hi = hauteurInitiale;
+    double h1;
 
-int exo6() {}
+    for (int i = 0; i < nombreRebond; i++) {
+        vi = sqrt(2 * g * hi);
+        v1 = vi * coefficientRebond;
+        h1 = (pow(v1,2))/(2 * g);
+    }
+    cout << "La hauteur de la balle après "; cout << nombreRebond; cout << " rebonds est de: "; cout << h1; cout << " mètres" << endl;
+    return 0;
+}
+
+//int exo4() {}
+
+//int exo5() {}
+
+//int exo6() {}
 
 
 
 int main() {
-    exo1();
+    //exo1();
     //exo2();
-    //exo3();
+    exo3();
     //exo4();
     //exo5();
     //exo6();
