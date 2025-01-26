@@ -80,7 +80,7 @@ int exo4() {}
 int exo5() {}
 
 int exo6() {
-    
+    cout << "bonjour";
 }
 
 
