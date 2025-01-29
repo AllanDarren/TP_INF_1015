@@ -1,0 +1,3 @@
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeFiles/exo_tp1.dir
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
