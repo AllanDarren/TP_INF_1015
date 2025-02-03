@@ -1,0 +1,4 @@
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP2/TD2-H25-Fichiers/cmake-build-debug/CMakeFiles/ProjetTD2.dir
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP2/TD2-H25-Fichiers/cmake-build-debug/CMakeFiles/ProjetTD2_couverture.dir
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP2/TD2-H25-Fichiers/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP2/TD2-H25-Fichiers/cmake-build-debug/CMakeFiles/rebuild_cache.dir

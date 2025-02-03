@@ -82,7 +82,7 @@ Film* lireFilm(istream& fichier)
 ListeFilms creerListe(string nomFichier)
 {
 	ifstream fichier(nomFichier, ios::binary);
-	fichier.exceptions(ios::failbit);
+	//fichier.exceptions(ios::failbit);
 	
 	int nElements = lireUint16(fichier);
 

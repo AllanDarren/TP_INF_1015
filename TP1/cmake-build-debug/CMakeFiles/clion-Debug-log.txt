@@ -1,20 +1,5 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1 -B /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug
-CMake Error: Parse error in cache file /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeCache.txt on line 140. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeCache.txt on line 144. Offending entry: >>>>>>> main
-CMake Error at cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake:78:
-  Parse error.  Expected a command name, got unquoted argument with text
-  "<<<<<<<".
-Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
-
-
-CMake Error: Could not find cmake module file: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake
-CMake Error at cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake:90:
-  Parse error.  Expected a command name, got unquoted argument with text
-  "<<<<<<<".
-Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
-
-
-CMake Error: Could not find cmake module file: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake
--- Configuring incomplete, errors occurred!
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug
+CMake File API: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug: failed to load from '/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json'
