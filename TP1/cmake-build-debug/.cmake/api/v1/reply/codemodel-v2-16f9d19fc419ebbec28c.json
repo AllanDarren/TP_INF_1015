@@ -1,0 +1,160 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "exercices_TP1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "back_a_sable::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-back_a_sable-Debug-e3dbaafe6883f7c815ad.json",
+					"name" : "back_a_sable",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exercies_TP1::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exercies_TP1-Debug-9524cb0bde86ddd3c5bc.json",
+========
+					"jsonFile" : "target-exercies_TP1-Debug-2f14048cd925180465f8.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exercies_TP1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo1::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo1-Debug-70af7a247d8053c1270c.json",
+========
+					"jsonFile" : "target-exo1-Debug-e8177210e66496bc3056.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo2::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo2-Debug-70110993a504f9654b7d.json",
+========
+					"jsonFile" : "target-exo2-Debug-414681eecfbf3397a58b.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo3::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo3-Debug-9f0b08538b98e8d984fd.json",
+========
+					"jsonFile" : "target-exo3-Debug-8dbeff813b07e4b426ab.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo4::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo4-Debug-d35b075658a69635ca45.json",
+========
+					"jsonFile" : "target-exo4-Debug-7b1271ad2f30c1ebd04e.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo5::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo5-Debug-9d3f5483b0d6eb9d10f6.json",
+========
+					"jsonFile" : "target-exo5-Debug-7b0d5221e84911457647.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exo6::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-749311ab746f6293e508.json
+					"jsonFile" : "target-exo6-Debug-7ddcd2a8eb534dc23be1.json",
+========
+					"jsonFile" : "target-exo6-Debug-4dcb26dc45f963cc8d51.json",
+>>>>>>>> main:TP1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16f9d19fc419ebbec28c.json
+					"name" : "exo6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-c25bdf132b388e151ff5.json",
+					"name" : "main",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug",
+		"source" : "/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
