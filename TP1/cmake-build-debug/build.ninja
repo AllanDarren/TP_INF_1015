@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: exo_tp1
+# Project: exercices_TP1
 # Configurations: Debug
 # =============================================================================
 
@@ -41,35 +41,283 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target exo_tp1
+# Object build statements for EXECUTABLE target exercies_TP1
 
 
 #############################################
-# Order-only phony target for exo_tp1
+# Order-only phony target for exercies_TP1
 
-build cmake_object_order_depends_target_exo_tp1: phony || .
+build cmake_object_order_depends_target_exercies_TP1: phony || .
 
-build CMakeFiles/exo_tp1.dir/Main.cpp.o: CXX_COMPILER__exo_tp1_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/Main.cpp || cmake_object_order_depends_target_exo_tp1
-  DEP_FILE = CMakeFiles/exo_tp1.dir/Main.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.1 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/exo_tp1.dir
-  OBJECT_FILE_DIR = CMakeFiles/exo_tp1.dir
+build CMakeFiles/exercies_TP1.dir/Main.cpp.o: CXX_COMPILER__exercies_TP1_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/Main.cpp || cmake_object_order_depends_target_exercies_TP1
+  DEP_FILE = CMakeFiles/exercies_TP1.dir/Main.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exercies_TP1.dir
+  OBJECT_FILE_DIR = CMakeFiles/exercies_TP1.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target exo_tp1
+# Link build statements for EXECUTABLE target exercies_TP1
 
 
 #############################################
-# Link the executable exo_tp1
+# Link the executable exercies_TP1
 
-build exo_tp1: CXX_EXECUTABLE_LINKER__exo_tp1_Debug CMakeFiles/exo_tp1.dir/Main.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.1
-  OBJECT_DIR = CMakeFiles/exo_tp1.dir
+build exercies_TP1: CXX_EXECUTABLE_LINKER__exercies_TP1_Debug CMakeFiles/exercies_TP1.dir/Main.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exercies_TP1.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = exo_tp1
-  TARGET_PDB = exo_tp1.dbg
+  TARGET_FILE = exercies_TP1
+  TARGET_PDB = exercies_TP1.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo1
+
+
+#############################################
+# Order-only phony target for exo1
+
+build cmake_object_order_depends_target_exo1: phony || .
+
+build CMakeFiles/exo1.dir/exo1.cpp.o: CXX_COMPILER__exo1_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo1.cpp || cmake_object_order_depends_target_exo1
+  DEP_FILE = CMakeFiles/exo1.dir/exo1.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo1.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo1.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo1
+
+
+#############################################
+# Link the executable exo1
+
+build exo1: CXX_EXECUTABLE_LINKER__exo1_Debug CMakeFiles/exo1.dir/exo1.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo1.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo1
+  TARGET_PDB = exo1.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo2
+
+
+#############################################
+# Order-only phony target for exo2
+
+build cmake_object_order_depends_target_exo2: phony || .
+
+build CMakeFiles/exo2.dir/exo2.cpp.o: CXX_COMPILER__exo2_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo2.cpp || cmake_object_order_depends_target_exo2
+  DEP_FILE = CMakeFiles/exo2.dir/exo2.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo2.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo2
+
+
+#############################################
+# Link the executable exo2
+
+build exo2: CXX_EXECUTABLE_LINKER__exo2_Debug CMakeFiles/exo2.dir/exo2.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo2
+  TARGET_PDB = exo2.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo3
+
+
+#############################################
+# Order-only phony target for exo3
+
+build cmake_object_order_depends_target_exo3: phony || .
+
+build CMakeFiles/exo3.dir/exo3.cpp.o: CXX_COMPILER__exo3_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo3.cpp || cmake_object_order_depends_target_exo3
+  DEP_FILE = CMakeFiles/exo3.dir/exo3.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo3.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo3.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo3
+
+
+#############################################
+# Link the executable exo3
+
+build exo3: CXX_EXECUTABLE_LINKER__exo3_Debug CMakeFiles/exo3.dir/exo3.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo3.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo3
+  TARGET_PDB = exo3.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo4
+
+
+#############################################
+# Order-only phony target for exo4
+
+build cmake_object_order_depends_target_exo4: phony || .
+
+build CMakeFiles/exo4.dir/exo4.cpp.o: CXX_COMPILER__exo4_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo4.cpp || cmake_object_order_depends_target_exo4
+  DEP_FILE = CMakeFiles/exo4.dir/exo4.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo4.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo4.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo4
+
+
+#############################################
+# Link the executable exo4
+
+build exo4: CXX_EXECUTABLE_LINKER__exo4_Debug CMakeFiles/exo4.dir/exo4.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo4.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo4
+  TARGET_PDB = exo4.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo5
+
+
+#############################################
+# Order-only phony target for exo5
+
+build cmake_object_order_depends_target_exo5: phony || .
+
+build CMakeFiles/exo5.dir/exo5.cpp.o: CXX_COMPILER__exo5_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo5.cpp || cmake_object_order_depends_target_exo5
+  DEP_FILE = CMakeFiles/exo5.dir/exo5.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo5.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo5.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo5
+
+
+#############################################
+# Link the executable exo5
+
+build exo5: CXX_EXECUTABLE_LINKER__exo5_Debug CMakeFiles/exo5.dir/exo5.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo5.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo5
+  TARGET_PDB = exo5.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target exo6
+
+
+#############################################
+# Order-only phony target for exo6
+
+build cmake_object_order_depends_target_exo6: phony || .
+
+build CMakeFiles/exo6.dir/exo6.cpp.o: CXX_COMPILER__exo6_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/exo6.cpp || cmake_object_order_depends_target_exo6
+  DEP_FILE = CMakeFiles/exo6.dir/exo6.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/exo6.dir
+  OBJECT_FILE_DIR = CMakeFiles/exo6.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target exo6
+
+
+#############################################
+# Link the executable exo6
+
+build exo6: CXX_EXECUTABLE_LINKER__exo6_Debug CMakeFiles/exo6.dir/exo6.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/exo6.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = exo6
+  TARGET_PDB = exo6.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target back_a_sable
+
+
+#############################################
+# Order-only phony target for back_a_sable
+
+build cmake_object_order_depends_target_back_a_sable: phony || .
+
+build CMakeFiles/back_a_sable.dir/Users/allankamta/CLionProjects/Debut_en_C++/back_à_sable/back_a_sable.cpp.o: CXX_COMPILER__back_a_sable_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/back_à_sable/back_a_sable.cpp || cmake_object_order_depends_target_back_a_sable
+  DEP_FILE = CMakeFiles/back_a_sable.dir/Users/allankamta/CLionProjects/Debut_en_C++/back_à_sable/back_a_sable.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/back_a_sable.dir
+  OBJECT_FILE_DIR = CMakeFiles/back_a_sable.dir/Users/allankamta/CLionProjects/Debut_en_C++/back_à_sable
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target back_a_sable
+
+
+#############################################
+# Link the executable back_a_sable
+
+build back_a_sable: CXX_EXECUTABLE_LINKER__back_a_sable_Debug CMakeFiles/back_a_sable.dir/Users/allankamta/CLionProjects/Debut_en_C++/back_à_sable/back_a_sable.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/back_a_sable.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = back_a_sable
+  TARGET_PDB = back_a_sable.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || .
+
+build CMakeFiles/main.dir/Main.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/Main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/Main.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable main
+
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/Main.cpp.o
+  FLAGS = -g -arch arm64
+  OBJECT_DIR = CMakeFiles/main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = main
+  TARGET_PDB = main.dbg
 
 
 #############################################
@@ -105,7 +353,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP1/cmake-build-debug
 
-build all: phony exo_tp1
+build all: phony exercies_TP1 exo1 exo2 exo3 exo4 exo5 exo6 back_a_sable main
 
 # =============================================================================
 # Built-in targets
