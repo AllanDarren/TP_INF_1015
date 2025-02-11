@@ -49,10 +49,63 @@ string lireString(istream& fichier)
 #pragma endregion//}
 
 //TODO: Une fonction pour ajouter un Film à une ListeFilms, le film existant déjà; on veut uniquement ajouter le pointeur vers le film existant.  Cette fonction doit doubler la taille du tableau alloué, avec au minimum un élément, dans le cas où la capacité est insuffisante pour ajouter l'élément.  Il faut alors allouer un nouveau tableau plus grand, copier ce qu'il y avait dans l'ancien, et éliminer l'ancien trop petit.  Cette fonction ne doit copier aucun Film ni Acteur, elle doit copier uniquement des pointeurs.
+void ajouterFilm(ListeFilms* liste, Film* film) {
+	if ( liste -> capacite > liste -> nElements ) {
+		(liste -> elements)[liste -> nElements ++] = film;
+	}
+	else {
+		if (liste -> capacite == 0) {
+			liste -> capacite = 1;
+			liste -> elements = new Film*[liste ->capacite];
+			(liste -> elements)[liste -> nElements ++] = film;
+		}
+		else {
+			(liste -> capacite) *= 2;
+			Film** nouvelleListe = new Film*[liste -> capacite];
+
+			for (int i = 0; i < (liste -> nElements); i++) {
+				nouvelleListe[i] = (liste -> elements)[i];
+			}
+
+			delete[] liste -> elements;
+			liste -> elements = nouvelleListe;
+			(liste -> elements)[liste -> nElements ++] = film;
+		}
+
+	}
+
+}
 
 //TODO: Une fonction pour enlever un Film d'une ListeFilms (enlever le pointeur) sans effacer le film; la fonction prenant en paramètre un pointeur vers le film à enlever.  L'ordre des films dans la liste n'a pas à être conservé.
 
+void supprimerFilm(ListeFilms* liste, Film* filmSupp) {
+	for (int i = 0; i < (liste -> nElements); i++) {
+		if ((liste -> elements)[i] == filmSupp) {
+			for (int j = i; j < (liste -> nElements) - 1; j++) {
+				liste -> elements [j] = liste -> elements[j + 1];
+			}
+			liste -> nElements --;
+			break;
+		}
+	}
+}
+
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
+auto trouverActeur(ListeFilms* films, const string& nom) {
+	span<Film*> spanFilms(films -> elements, films -> nElements);
+	for (Film* film : spanFilms) {
+		if (film != nullptr) {
+			span<Acteur*> spanActeurs((film -> acteurs), (film -> acteurs) -> elements);
+			for (Acteur* acteur: film -> acteurs) {
+				if (acteur!= nullptr && acteur -> nom == nom) {
+					return acteur;
+				}
+			}
+		}
+	}
+	return nullptr;
+
+}
 
 //TODO: Compléter les fonctions pour lire le fichier et créer/allouer une ListeFilms.  La ListeFilms devra être passée entre les fonctions, pour vérifier l'existence d'un Acteur avant de l'allouer à nouveau (cherché par nom en utilisant la fonction ci-dessus).
 Acteur* lireActeur(istream& fichier)
