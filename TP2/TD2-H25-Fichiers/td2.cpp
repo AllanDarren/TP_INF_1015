@@ -95,8 +95,8 @@ auto trouverActeur(ListeFilms* films, const string& nom) {
 	span<Film*> spanFilms(films -> elements, films -> nElements);
 	for (Film* film : spanFilms) {
 		if (film != nullptr) {
-			span<Acteur*> spanActeurs((film -> acteurs), (film -> acteurs) -> elements);
-			for (Acteur* acteur: film -> acteurs) {
+			span<Acteur*> spanActeurs((film -> acteurs).elements, (film -> acteurs).nElements);
+			for (Acteur* acteur: spanActeurs) {
 				if (acteur!= nullptr && acteur -> nom == nom) {
 					return acteur;
 				}
