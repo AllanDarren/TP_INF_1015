@@ -108,13 +108,20 @@ auto trouverActeur(ListeFilms* films, const string& nom) {
 }
 
 //TODO: Compléter les fonctions pour lire le fichier et créer/allouer une ListeFilms.  La ListeFilms devra être passée entre les fonctions, pour vérifier l'existence d'un Acteur avant de l'allouer à nouveau (cherché par nom en utilisant la fonction ci-dessus).
-Acteur* lireActeur(istream& fichier)
+Acteur* lireActeur(istream& fichier, ListeFilms* liste)
 {
 	Acteur acteur = {};
-	acteur.nom            = lireString(fichier);
-	acteur.anneeNaissance = lireUint16 (fichier);
-	acteur.sexe           = lireUint8  (fichier);
-	return {}; //TODO: Retourner un pointeur soit vers un acteur existant ou un nouvel acteur ayant les bonnes informations, selon si l'acteur existait déjà.  Pour fins de débogage, affichez les noms des acteurs crées; vous ne devriez pas voir le même nom d'acteur affiché deux fois pour la création.
+	acteur.nom = lireString(fichier);
+	acteur.anneeNaissance = lireUint16(fichier);
+	acteur.sexe = lireUint8(fichier);
+
+	if (trouverActeur(liste, acteur.nom) != nullptr) {
+		return trouverActeur(liste, acteur.nom);
+	}
+	else {
+		Acteur* nouvelActeur = new Acteur(acteur);
+		return nouvelActeur; //TODO: Retourner un pointeur soit vers un acteur existant ou un nouvel acteur ayant les bonnes informations, selon si l'acteur existait déjà.  Pour fins de débogage, affichez les noms des acteurs crées; vous ne devriez pas voir le même nom d'acteur affiché deux fois pour la création.
+	}
 }
 
 Film* lireFilm(istream& fichier)
