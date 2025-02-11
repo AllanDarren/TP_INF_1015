@@ -51,25 +51,25 @@ string lireString(istream& fichier)
 //TODO: Une fonction pour ajouter un Film à une ListeFilms, le film existant déjà; on veut uniquement ajouter le pointeur vers le film existant.  Cette fonction doit doubler la taille du tableau alloué, avec au minimum un élément, dans le cas où la capacité est insuffisante pour ajouter l'élément.  Il faut alors allouer un nouveau tableau plus grand, copier ce qu'il y avait dans l'ancien, et éliminer l'ancien trop petit.  Cette fonction ne doit copier aucun Film ni Acteur, elle doit copier uniquement des pointeurs.
 void ajouterFilm(ListeFilms* liste, Film* film) {
 	if ( liste -> capacite > liste -> nElements ) {
-		(liste -> elements)[liste -> nElements ++] = film;
+		liste -> elements[liste -> nElements ++] = film;
 	}
 	else {
 		if (liste -> capacite == 0) {
 			liste -> capacite = 1;
 			liste -> elements = new Film*[liste ->capacite];
-			(liste -> elements)[liste -> nElements ++] = film;
+			liste -> elements[liste -> nElements ++] = film;
 		}
 		else {
-			(liste -> capacite) *= 2;
+			liste -> capacite *= 2;
 			Film** nouvelleListe = new Film*[liste -> capacite];
 
-			for (int i = 0; i < (liste -> nElements); i++) {
-				nouvelleListe[i] = (liste -> elements)[i];
+			for (int i = 0; i < liste -> nElements; i++) {
+				nouvelleListe[i] = liste -> elements [i];
 			}
 
 			delete[] liste -> elements;
 			liste -> elements = nouvelleListe;
-			(liste -> elements)[liste -> nElements ++] = film;
+			liste -> elements[liste -> nElements ++] = film;
 		}
 
 	}
@@ -79,9 +79,9 @@ void ajouterFilm(ListeFilms* liste, Film* film) {
 //TODO: Une fonction pour enlever un Film d'une ListeFilms (enlever le pointeur) sans effacer le film; la fonction prenant en paramètre un pointeur vers le film à enlever.  L'ordre des films dans la liste n'a pas à être conservé.
 
 void supprimerFilm(ListeFilms* liste, Film* filmSupp) {
-	for (int i = 0; i < (liste -> nElements); i++) {
-		if ((liste -> elements)[i] == filmSupp) {
-			for (int j = i; j < (liste -> nElements) - 1; j++) {
+	for (int i = 0; i < liste -> nElements; i++) {
+		if (liste -> elements [i] == filmSupp) {
+			for (int j = i; j < liste -> nElements - 1; j++) {
 				liste -> elements [j] = liste -> elements[j + 1];
 			}
 			liste -> nElements --;
@@ -91,11 +91,11 @@ void supprimerFilm(ListeFilms* liste, Film* filmSupp) {
 }
 
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
-auto trouverActeur(ListeFilms* films, const string& nom) {
+Acteur* trouverActeur(ListeFilms& films, const string& nom) {
 	span<Film*> spanFilms(films -> elements, films -> nElements);
 	for (Film* film : spanFilms) {
 		if (film != nullptr) {
-			span<Acteur*> spanActeurs((film -> acteurs).elements, (film -> acteurs).nElements);
+			span<Acteur*> spanActeurs(film -> acteurs.elements, film -> acteurs.nElements);
 			for (Acteur* acteur: spanActeurs) {
 				if (acteur!= nullptr && acteur -> nom == nom) {
 					return acteur;
@@ -114,6 +114,10 @@ Acteur* lireActeur(istream& fichier)
 	acteur.nom            = lireString(fichier);
 	acteur.anneeNaissance = lireUint16 (fichier);
 	acteur.sexe           = lireUint8  (fichier);
+
+	if (trouverActeur() != nullptr) {
+		return {};
+	}
 	return {}; //TODO: Retourner un pointeur soit vers un acteur existant ou un nouvel acteur ayant les bonnes informations, selon si l'acteur existait déjà.  Pour fins de débogage, affichez les noms des acteurs crées; vous ne devriez pas voir le même nom d'acteur affiché deux fois pour la création.
 }
 
@@ -184,7 +188,7 @@ int main()
 {
 	bibliotheque_cours::activerCouleursAnsi();  // Permet sous Windows les "ANSI escape code" pour changer de couleurs https://en.wikipedia.org/wiki/ANSI_escape_code ; les consoles Linux/Mac les supportent normalement par défaut.
 
-	int* fuite = new int; //TODO: Enlever cette ligne après avoir vérifié qu'il y a bien un "Fuite detectee" de "4 octets" affiché à la fin de l'exécution, qui réfère à cette ligne du programme.
+	//int* fuite = new int; //TODO: Enlever cette ligne après avoir vérifié qu'il y a bien un "Fuite detectee" de "4 octets" affiché à la fin de l'exécution, qui réfère à cette ligne du programme.
 
 	static const string ligneDeSeparation = "\n\033[35m════════════════════════════════════════\033[0m\n";
 
@@ -195,7 +199,7 @@ int main()
 	
 	cout << ligneDeSeparation << "Le premier film de la liste est:" << endl;
 	//TODO: Afficher le premier film de la liste.  Devrait être Alien.
-	
+
 	cout << ligneDeSeparation << "Les films sont:" << endl;
 	//TODO: Afficher la liste des films.  Il devrait y en avoir 7.
 	
