@@ -45,6 +45,7 @@ string lireString(istream& fichier) {
 
 #pragma endregion
 
+//TODO: Une fonction pour ajouter un Film à une ListeFilms, le film existant déjà; on veut uniquement ajouter le pointeur vers le film existant.
 void ajouterFilm(ListeFilms* liste, Film* film) {
     if (liste->nElements >= liste->capacite) {
         int nouvelleCapacite = max(liste->capacite * 2, 1);
@@ -59,6 +60,7 @@ void ajouterFilm(ListeFilms* liste, Film* film) {
     liste->elements[liste->nElements++] = film;
 }
 
+//TODO: Une fonction pour enlever un Film d'une ListeFilms (enlever le pointeur) sans effacer le film.
 void supprimerFilm(ListeFilms* liste, Film* film) {
     for (int i = 0; i < liste->nElements; ++i) {
         if (liste->elements[i] == film) {
@@ -68,6 +70,7 @@ void supprimerFilm(ListeFilms* liste, Film* film) {
     }
 }
 
+//TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.
 Acteur* trouverActeur(const ListeFilms* liste, const string& nom) {
     span<Film*> films(liste->elements, liste->nElements);
     for (Film* film : films) {
@@ -80,6 +83,7 @@ Acteur* trouverActeur(const ListeFilms* liste, const string& nom) {
     return nullptr;
 }
 
+//TODO: Compléter les fonctions pour lire le fichier et créer/allouer une ListeFilms.
 Acteur* lireActeur(istream& fichier, ListeFilms* liste) {
     Acteur acteur;
     acteur.nom = lireString(fichier);
@@ -128,6 +132,7 @@ ListeFilms creerListe(const string& nomFichier) {
     return liste;
 }
 
+//TODO: Une fonction pour détruire un film (relâcher toute la mémoire associée à ce film, et les acteurs qui ne jouent plus dans aucun films de la collection).
 void detruireFilm(Film* film) {
     cout << "Destruction du film: " << film->titre << endl;
     for (int i = 0; i < film->acteurs.nElements; ++i) {
@@ -135,14 +140,15 @@ void detruireFilm(Film* film) {
         supprimerFilm(&acteur->joueDans, film);
         if (acteur->joueDans.nElements == 0) {
             cout << "Destruction de l'acteur: " << acteur->nom << endl;
-            // Ajouter la désallocation du tableau de films
-            delete[] acteur->joueDans.elements;
+            delete[] acteur->joueDans.elements; // Désallouer le tableau de films
             delete acteur;
         }
     }
     delete[] film->acteurs.elements;
     delete film;
 }
+
+//TODO: Une fonction pour détruire une ListeFilms et tous les films qu'elle contient.
 void detruireListeFilms(ListeFilms* liste) {
     for (int i = 0; i < liste->nElements; ++i) {
         detruireFilm(liste->elements[i]);
@@ -152,6 +158,7 @@ void detruireListeFilms(ListeFilms* liste) {
     liste->nElements = liste->capacite = 0;
 }
 
+//TODO: Une fonction pour afficher un film avec tous ces acteurs.
 void afficherActeur(const Acteur& acteur) {
     cout << "  " << acteur.nom << ", né en " << acteur.anneeNaissance
          << ", sexe: " << acteur.sexe << endl;
@@ -169,6 +176,7 @@ void afficherFilm(const Film* film) {
     cout << ligneSep;
 }
 
+//TODO: Une fonction pour afficher une ListeFilms.
 void afficherListeFilms(const ListeFilms& liste) {
     span<Film*> films(liste.elements, liste.nElements);
     for (Film* film : films) {
@@ -176,6 +184,7 @@ void afficherListeFilms(const ListeFilms& liste) {
     }
 }
 
+//TODO: Une fonction pour afficher la filmographie d'un acteur.
 void afficherFilmographieActeur(const ListeFilms& liste, const string& nom) {
     const Acteur* acteur = trouverActeur(&liste, nom);
     if (!acteur) {
@@ -190,36 +199,38 @@ int main() {
     bibliotheque_cours::activerCouleursAnsi();
     static const string ligneSep = "\n\033[35m════════════════════════════════════════\033[0m\n";
 
+    //TODO: La ligne suivante devrait lire le fichier binaire en allouant la mémoire nécessaire.
     ListeFilms liste = creerListe("/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP2/TD2-H25-Fichiers/films.bin");
 
-    // Afficher premier film
+    //TODO: Afficher le premier film de la liste.
     cout << ligneSep << "Premier film:\n";
     if (liste.nElements > 0)
         afficherFilm(liste.elements[0]);
 
-    // Afficher tous les films
+    //TODO: Afficher tous les films.
     cout << ligneSep << "Tous les films:\n";
     afficherListeFilms(liste);
 
-    // Modifier Benedict Cumberbatch
+    //TODO: Modifier l'année de naissance de Benedict Cumberbatch pour être 1976.
     Acteur* benedict = trouverActeur(&liste, "Benedict Cumberbatch");
     if (benedict)
         benedict->anneeNaissance = 1976;
 
-    // Filmographie de Benedict
+    //TODO: Afficher la liste des films où Benedict Cumberbatch joue.
     cout << ligneSep << "Filmographie de Benedict Cumberbatch:\n";
     afficherFilmographieActeur(liste, "Benedict Cumberbatch");
 
-    // Supprimer Alien
+    //TODO: Détruire et enlever le premier film de la liste (Alien).
     if (liste.nElements > 0) {
         Film* alien = liste.elements[0];
         supprimerFilm(&liste, alien);
         detruireFilm(alien);
     }
 
-    // Afficher films restants
+    //TODO: Afficher les films restants.
     cout << ligneSep << "Films restants:\n";
     afficherListeFilms(liste);
 
+    //TODO: Détruire tout avant de terminer le programme.
     detruireListeFilms(&liste);
 }
