@@ -124,7 +124,7 @@ Acteur* lireActeur(istream& fichier, ListeFilms* liste) {
         return existant;
 
     Acteur* nouvelActeur = new Acteur(acteur);
-    nouvelActeur->joueDans = ListeFilms(); // Initialisation d'une filmographie vide.
+    nouvelActeur->joueDans = ListeFilms();
     cout << "Création de l'acteur: " << nouvelActeur->nom << endl;
     return nouvelActeur; //TODO: Retourner un pointeur soit vers un acteur existant ou un nouvel acteur ayant les bonnes informations, selon si l'acteur existait déjà.  Pour fins de débogage, affichez les noms des acteurs crées; vous ne devriez pas voir le même nom d'acteur affiché deux fois pour la création.
 }
@@ -169,11 +169,10 @@ void detruireFilm(Film* film) {
     cout << "Destruction du film: " << film->titre << endl;
     for (int i = 0; i < film->acteurs.nElements; ++i) {
         Acteur* acteur = film->acteurs.elements[i];
-        // Enlever le film de la filmographie de l'acteur.
         acteur->joueDans.supprimerFilm(film);
         if (acteur->joueDans.size() == 0) {
             cout << "Destruction de l'acteur: " << acteur->nom << endl;
-            delete[] acteur->joueDans.data(); // Désalloue le tableau de films (s'il a été alloué)
+            delete[] acteur->joueDans.data();
             delete acteur;
         }
     }
