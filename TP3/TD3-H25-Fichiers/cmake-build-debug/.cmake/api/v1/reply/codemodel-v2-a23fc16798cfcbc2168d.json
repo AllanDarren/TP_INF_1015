@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ProjetTD3",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetTD3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetTD3-Debug-64aea140e2abba410220.json",
+					"name" : "ProjetTD3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetTD3_couverture::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetTD3_couverture-Debug-103aadcc934788903c2e.json",
+					"name" : "ProjetTD3_couverture",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP3/TD3-H25-Fichiers/cmake-build-debug",
+		"source" : "/Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP3/TD3-H25-Fichiers"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

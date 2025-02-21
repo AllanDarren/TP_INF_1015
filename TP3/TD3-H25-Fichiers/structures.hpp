@@ -25,7 +25,23 @@ public:
 
 struct ListeActeurs {
 	int capacite, nElements;
-	Acteur** elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
+	//Acteur** elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
+	unique_ptr<Acteur*[]> elements;
+public:
+	ListeActeurs() : capacite(0), nElements(0), elements(nullptr) {};
+
+	ListeActeurs(int capacite) {
+		this -> capacite = capacite;
+		this -> nElements = 0;
+		if (capacite > 0) {
+			this -> elements = make_unique<Acteur*[]>(capacite);
+		}
+		else {
+			this -> elements = nullptr;
+		}
+	}
+
+
 };
 
 struct Film
@@ -33,6 +49,9 @@ struct Film
 	std::string titre = "aucun", realisateur = "aucun"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
 	int anneeSortie = 0, recette = 0; // Année de sortie et recette globale du film en millions de dollars
 	ListeActeurs acteurs;
+
+
+	Film(int capaciteActeurs) : acteurs(capaciteActeurs) {}
 
 };
 

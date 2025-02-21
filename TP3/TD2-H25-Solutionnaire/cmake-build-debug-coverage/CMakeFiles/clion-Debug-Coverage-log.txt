@@ -1,0 +1,10 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja "-DCMAKE_CXX_FLAGS=-fcoverage-mapping -fprofile-instr-generate" "-DCMAKE_C_FLAGS=-fcoverage-mapping -fprofile-instr-generate" -G Ninja -S /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP3/TD2-H25-Solutionnaire -B /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP3/TD2-H25-Solutionnaire/cmake-build-debug-coverage
+-- CMake      generator: Ninja
+--             platform: 
+--     host system name: Darwin
+--  C++ compiler ID+Ver: AppleClang   16.0.0.16000026
+--       target bitness: 64 bit
+--       host processor: arm64
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/allankamta/CLionProjects/Debut_en_C++/TP_INF_1015/TP3/TD2-H25-Solutionnaire/cmake-build-debug-coverage

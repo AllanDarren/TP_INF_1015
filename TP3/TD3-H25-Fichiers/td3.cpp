@@ -25,6 +25,7 @@
 #include "bibliotheque_cours.hpp"
 #include "verification_allocation.hpp"
 #include "debogage_memoire.hpp"
+#include <memory>
 
 using namespace std;
 using namespace iter;
@@ -72,7 +73,7 @@ void ListeFilms::ajouterFilm(Film* film) {
     if (nElements >= capacite) {
         int nouvelleCapacite = max(capacite * 2, 1);
         Film** nouveauxElements = new Film*[nouvelleCapacite];
-        for (int i = 0; i < nElements; ++i) {
+        for (int i : range(nElements)) {
             nouveauxElements[i] = elements[i];
         }
         delete[] elements;
@@ -96,7 +97,7 @@ void ListeFilms::supprimerFilm(Film* film) {
 Acteur* ListeFilms::trouverActeur(const string& nom) const {
     span<Film*> films(elements, nElements);
     for (Film* film : films) {
-        span<Acteur*> acteurs(film->acteurs.elements, film->acteurs.nElements);
+        span<Acteur*> acteurs(film->acteurs.elements.get(), film->acteurs.nElements);
         for (Acteur* acteur : acteurs) {
             if (acteur->nom == nom)
                 return acteur;
@@ -131,13 +132,16 @@ Acteur* lireActeur(istream& fichier, ListeFilms* liste) {
 
 
 Film* lireFilm(istream& fichier, ListeFilms* liste) {
-    Film* film = new Film;
-    film->titre = lireString(fichier);
-    film->realisateur = lireString(fichier);
-    film->anneeSortie = lireUint16(fichier);
-    film->recette = lireUint16(fichier);
-    film->acteurs.nElements = lireUint8(fichier);
-    film->acteurs.elements = new Acteur*[film->acteurs.nElements];
+    string titre = lireString(fichier);
+    string realisateur = lireString(fichier);
+    int anneeSortie = lireUint16(fichier);
+    int recette = lireUint16(fichier);
+    int nElements = lireUint8(fichier);
+    Film* film = new Film(nElements);
+    film->titre = titre;
+    film->anneeSortie = anneeSortie;
+    film->recette = recette;
+    film->acteurs.nElements = nElements;
 
     for (int i = 0; i < film->acteurs.nElements; ++i) {
         film->acteurs.elements[i] = lireActeur(fichier, liste);//TODO: Placer l'acteur au bon endroit dans les acteurs du film.
@@ -176,7 +180,7 @@ void detruireFilm(Film* film) {
             delete acteur;
         }
     }
-    delete[] film->acteurs.elements;
+    //delete[] film->acteurs.elements;
     delete film;
 }
 
@@ -205,7 +209,7 @@ void afficherFilm(const Film* film) {
          << "Année: " << film->anneeSortie << "  Recette: " << film->recette << "M$" << endl
          << "Acteurs:" << endl;
     // TODO: Changer le for pour utiliser un span.
-    span<Acteur*> acteurs(film->acteurs.elements, film->acteurs.nElements);
+    span<Acteur*> acteurs(film->acteurs.elements.get(), film->acteurs.nElements);
     for (Acteur* acteur : acteurs) {
         // TODO: Afficher le film.
         afficherActeur(*acteur);
