@@ -26,6 +26,7 @@
 #include "verification_allocation.hpp"
 #include "debogage_memoire.hpp"
 #include <memory>
+#include <sstream>
 
 using namespace std;
 using namespace iter;
@@ -200,10 +201,10 @@ void afficherActeur(const Acteur& acteur) {
 
 //TODO: Une fonction pour afficher un film avec tous ces acteurs (en utilisant la fonction afficherActeur ci-dessus).
 
-void afficherFilm(const Film* film) {
+ostream& operator<<(ostream& os,const Film* film) {
     // TODO: Utiliser des caractères Unicode pour définir la ligne de séparation (différente des autres lignes de séparations dans ce programme).
-    static const string ligneSep = "\033[35m════════════════════════════════════════\033[0m\n";
-    cout << ligneSep << "Titre: " << film->titre << endl
+    os << "\033[35m════════════════════════════════════════\033[0m\n";
+    os  << "Titre: " << film->titre << endl
          << "Réalisateur: " << film->realisateur << endl
          << "Année: " << film->anneeSortie << "  Recette: " << film->recette << "M$" << endl
          << "Acteurs:" << endl;
@@ -213,7 +214,7 @@ void afficherFilm(const Film* film) {
         // TODO: Afficher le film.
         afficherActeur(*acteur);
     }
-    cout << ligneSep;
+    return os;
 }
 
 
@@ -221,7 +222,7 @@ void afficherFilm(const Film* film) {
 void ListeFilms::afficher() const {
     span<Film*> films(elements, nElements);
     for (Film* film : films) {
-        afficherFilm(film);
+        cout << film;
     }
 }
 
@@ -247,8 +248,9 @@ int main() {
 
     cout << ligneSep << "Le premier film de la liste est:" << endl;
     //TODO: Afficher le premier film de la liste.  Devrait être Alien.
+
     if (liste.size() > 0)
-        afficherFilm(liste[0]);
+        cout << liste[0];
 
     cout << ligneSep << "Les films sont:" << endl;
     //TODO: Afficher la liste des films.  Il devrait y en avoir 7.
