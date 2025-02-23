@@ -19,14 +19,14 @@ public:
 	Film* operator[](int index) const;
 	void afficher() const;
 	void detruireListeFilms();
-	Acteur* trouverActeur(const std::string& nom) const;
+	shared_ptr<Acteur> trouverActeur(const std::string& nom) const;
 	Film** data();
 };
 
 struct ListeActeurs {
 	int capacite, nElements;
 	//Acteur** elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
-	unique_ptr<Acteur*[]> elements;
+	unique_ptr<shared_ptr<Acteur>[]> elements;
 public:
 	ListeActeurs() : capacite(0), nElements(0), elements(nullptr) {};
 
@@ -34,7 +34,7 @@ public:
 		this -> capacite = capacite;
 		this -> nElements = 0;
 		if (capacite > 0) {
-			this -> elements = make_unique<Acteur*[]>(capacite);
+			this -> elements = make_unique<shared_ptr<Acteur>[]>(capacite);
 		}
 		else {
 			this -> elements = nullptr;
@@ -58,7 +58,7 @@ struct Film
 struct Acteur
 {
 	std::string nom = "aucun"; int anneeNaissance = 0; char sexe = 'N';
-	ListeFilms joueDans;
+	// ListeFilms joueDans;
 
 
 };
