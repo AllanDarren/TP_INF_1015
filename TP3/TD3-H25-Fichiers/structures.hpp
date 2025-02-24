@@ -1,8 +1,9 @@
 #pragma once
-// Structures mémoires pour une collection de films.
 
 #include <string>
 #include <memory>
+#include <functional>
+#include <span>
 using namespace std;
 
 struct Film; struct Acteur; // Permet d'utiliser les types alors qu'ils seront défini après.
@@ -22,6 +23,15 @@ public:
 	void detruireListeFilms();
 	shared_ptr<Acteur> trouverActeur(const std::string& nom) const;
 	Film** data();
+
+	Film* chercherFilm(const function<bool(const Film*)>& critere) {
+		for (int i = 0; i < nElements; ++i) {
+			if (critere(elements[i])) {
+				return elements[i];
+			}
+		}
+		return nullptr;
+	}
 };
 
 struct ListeActeurs {
