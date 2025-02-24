@@ -226,18 +226,6 @@ void ListeFilms::afficher() const {
     }
 }
 
-
-// void afficherFilmographieActeur(const ListeFilms& liste, const string& nom) {
-//     //TODO: Utiliser votre fonction pour trouver l'acteur (au lieu de le mettre à nullptr).
-//     const Acteur* acteur = liste.trouverActeur(nom);
-//     if (!acteur) {
-//         cout << "Acteur non trouvé." << endl;
-//         return;
-//     }
-//     cout << "Films de " << nom << ":\n";
-//     acteur->joueDans.afficher();
-// }
-
 int main() {
     bibliotheque_cours::activerCouleursAnsi();
     static const string ligneSep = "\n\033[35m════════════════════════════════════════\033[0m\n";
@@ -275,6 +263,14 @@ int main() {
     cout << ptrSkylien;
     cout << liste[0];
     cout << liste[1];
+    //}
+
+    //Chapitre 10:TD3 {
+    cout << ligneSep << "TD3 - Chapitre 10:" << endl;
+    Film* filmTrouve = liste.chercherFilm([](const Film* film) {
+        return film->recette == 955;
+        });
+    cout << filmTrouve;
     //}
 
     //TODO: Détruire et enlever le premier film de la liste (Alien).  Ceci devrait "automatiquement" (par ce que font vos fonctions) détruire les acteurs Tom Skerritt et John Hurt, mais pas Sigourney Weaver puisqu'elle joue aussi dans Avatar.
